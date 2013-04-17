@@ -1,0 +1,70 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+        <link href="styles/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+          body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+          .sidebar-nav {
+            padding: 9px 0;
+          }
+    
+          @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+              float: none;
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+          }
+        </style>
+        <link href="styles/bootstrap-responsive.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- build:js scripts/vendor/modernizr.js -->
+            <!--<script src="components/modernizr/modernizr.js"></script>-->
+        <!-- endbuild -->
+        
+    </head>
+    <body>
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container-fluid">
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <button type="button" class="btn btn-primary" id="show-add-new-game">Create New</button>  
+              </button>
+              <a class="brand" href="#">ScoreKeeper</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container-fluid" id="app">            
+            <div class="row-fluid">
+                <div class="span12" id="game-list">
+                </div>
+            </div>
+        </div>
+          
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+
+        <!-- build:js scripts/main.js -->
+        <script data-main="scripts/main" src="../components/requirejs/require.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

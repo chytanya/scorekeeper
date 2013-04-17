@@ -1,0 +1,35 @@
+<div>
+    
+    <div class="row-fluid">
+        <div class="span12">
+            Game Name : <%- name %>
+        </div>
+    </div>
+        
+    <div class="row-fluid">
+        <div class="span12">
+            Game Winner : <%- winner ? winner : 'No Winner Yet!' %>
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span12">
+            Game Players: 
+            <% _.each(players, function(player){
+                %>
+                    <div class="player">
+                        <span class="name"><%-player.name %></span>
+                    </div>
+                <%
+            });
+            %>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <a class="delete" href="#">DELETE</a>
+        </div>
+    </div>
+        
+</div>
