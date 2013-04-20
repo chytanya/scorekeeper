@@ -1,20 +1,20 @@
 <div>
     
-    <div class="row-fluid">
-        <div class="span12">
-            Game Name : <%- name %>
+    <div class="row-fluid name-wrapper">
+        <div class="span12 name">
+            <%- name %>
         </div>
     </div>
         
-    <div class="row-fluid">
-        <div class="span12">
-            Game Winner : <%- winner ? winner : 'No Winner Yet!' %>
+    <div class="row-fluid winner-wrapper">
+        <div class="span12 winner">
+            Game Winner : <%- winner ? winner : '?' %>
         </div>
     </div>
     
-    <div class="row-fluid">
-        <div class="span12">
-            Game Players: 
+    <div class="row-fluid players-wrapper">
+        <div class="span12 players">
+         Players: 
             <% _.each(players, function(player){
                 %>
                     <div class="player">

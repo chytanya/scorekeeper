@@ -1,15 +1,20 @@
 define([
+        'bootstrap',
         'backbone',
         'collections/games', 'collections/users',
         'views/game',
+        'views/gameDetails',
         'text!../templates/no_games.html',
-        'text!../templates/create_new_game.html'
+        'text!../templates/create_new_game.html',
+        'text!../templates/new_player.html',
     ], function (
+            Bootstrap,
             Backbone,
-            games, users,
-            GameView,
+            games, allPlayers,
+            GameView, GameDetailView,
             noGamesTemplateHTML,
-            createNewGameTemplateHTML
+            createNewGameTemplateHTML,
+            newPlayerTemplateHTML
         ){
 
     'use strict';
@@ -21,6 +26,8 @@ define([
         noGamesTemplate : _.template(noGamesTemplateHTML),
         
         createNewGameTemplate : _.template(createNewGameTemplateHTML),
+
+        newPlayerTemplate : _.template(newPlayerTemplateHTML),
         
         events: {
             'click #no-games'       :   'showAddNewGame',
@@ -43,20 +50,14 @@ define([
         },
         
         render: function(){
-            
-            console.log('in render');
-            
+                        
             /*
-            games.create([
-              { name: "Least Count", players : [], winner : null }
-            ]);
-            _.invoke(games.models, 'destroy');
+                _.invoke(games.models, 'destroy');
+                this.deleteAppData();
             */
 
             if(games.length) {
-                
                 console.log(games);
-                
             } else {
                 $('#game-list').html(this.noGamesTemplate({}));
             }
@@ -70,28 +71,27 @@ define([
 
         // Add all items in the **games** collection at once.
         addAll: function () {
+            $('#app').html('<div class="row"><div class="span12" id="game-list"></div></div>');
             this.$('#game-list').html('');
             games.each(this.addOne, this);
+            $('#show-add-new-game').show();
         },
         
         showAddNewGame: function(){
             
-            /*
-            var game =  games.create({ name: 'Untitled Game', players : [], winner : null, created : '' });
-            $('#app').html(this.createNewGameTemplate({ game : game.toJSON() })); 
-            */
+            allPlayers.fetch();
+            var selectedPlayers = [];
 
-            var player1 = { id : 1, name : 'User1' };
-            var player2 = { id : 2, name : 'User2' };
-            var player3 = { id : 3, name : 'User3' };
-            var player4 = { id : 4, name : 'User4' };
-            users.add(player1);
-            users.add(player2);
-            users.add(player3);
-            users.add(player4);
+            var newGameName = $('#new-game-name').val();
+            $('.player.selected').each(function(){
+                selectedPlayers.push(allPlayers.get($(this).attr('data-player-id')));
+            });
 
-            var game =  { name: 'Untitled Game', players : [], winner : null, created : '' };
-            $('#app').html(this.createNewGameTemplate({ game : game, allPlayers : users.toJSON() })); 
+            var game =  { name: newGameName, players : selectedPlayers, winner : null };
+            $('#app').html(this.createNewGameTemplate({ 
+                                            game                :   game, 
+                                            allPlayers          :   allPlayers.toJSON()
+                                        })); 
 
         },
         
@@ -102,19 +102,19 @@ define([
             $.each($('.player.selected'), function() {
                 var playerId =  $(this).attr('data-player-id');
                 if(!playerId){ alert('Invalid Player.'); return false; }
-                players.push(users.get(playerId));
+                players.push(allPlayers.get(playerId));
             });
 
             games.create({ name: name, players : players, winner : null });
-            this.initialize();
+            this.addAll();
         },
         
         showGame: function(e){
             var gameId = $(e.target).closest('.game').attr('data-game-id');
             if(gameId){
                 var game = games.get(gameId);
-                var view = new GameView({ model: game });
-                $('#app').html(view.renderDetails().el);
+                var view = new GameDetailView({ model: game });
+                $('#app').html(view.render().el);
             }else{
                 alert('no such game!');   
             }
@@ -127,13 +127,41 @@ define([
         },
         
         showAddNewPlayer: function(e){
-            $('<input>').attr({
-                        type: 'text',
-                        name: 'new-player'
-                    }).appendTo('#new-game-player-list');
+            if($('#new-player-form').length == 0){
+                $('#app').append(this.newPlayerTemplate({}));
+            }
+            $('#new-player-form').modal();
+            $('#new-player-form').modal('show');
+        },
+
+        addNewPlayer: function(playerName){
+            var newPlayer = allPlayers.create({ name : playerName });
+        },
+
+        deleteAllPlayers: function(){
+            localStorage.removeItem('scorekeeper.users');   
+        },
+
+        deleteAllGames: function(){
+            localStorage.removeItem('scorekeeper.games');   
+        },
+
+        deleteAppData: function(){
+            this.deleteAllGames();
+            this.deleteAllPlayers();
         }
         
     });
 
-    return AppView;
+    var app = new AppView();
+
+    $('#show-add-new-game').on('click', function(e){
+        app.showAddNewGame(); 
+    });
+    
+    $('.brand').on('click', function(e){
+        app.addAll(); 
+    });
+
+    return app;
 });

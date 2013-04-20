@@ -1,52 +1,46 @@
-<div class="row-fluid">
+<div class="row-fluid" id="new-game-form">
     <div class="span12">
-        <input type="text" id="new-game-name" placeholder="Name your Game" value="<%- game.name %>" />
-    </div>
-</div>
-
-<div class="row-fluid">
-    <div class="span12">
-        <span>Players:</span>
-    </div>
-</div>
-        
-<div class="row-fluid">
-    <div class="span12" id="new-game-player-list">
-        
-    </div>
-</div>
-
-<div class="row-fluid" id="available-players">
-    <div class="span12">
-        <%
-            n= 3; 
-
-            var groupedPlayers =   _.groupBy(allPlayers, function(a, b){
-                                    return Math.floor(b/n);
-                            });
-        %>
-
-        <% _.each(groupedPlayers, function(playerGroup, index){ %>
-            <div class="row-fluid">
-                <% _.each(playerGroup, function(player){ %>
-                    <div class="span4 player" data-player-id="<%-player.id %>">
-                        <%-player.name %>
-                    </div>
-                <% }); %>
+        <div class="row-fluid">
+            <div class="span12">
+                <input type="text" id="new-game-name" placeholder="Name your Game" value="<%- game.name %>" />
             </div>
-        <%  }); %>
-    </div>
-</div>
+        </div>
 
-<div class="row-fluid">
-    <div class="span12">
+        <div class="row-fluid">
+            <div class="span12">
+                <span>Players:</span>
+            </div>
+        </div>
+                
+        <div class="row-fluid">
+            <div class="span12" id="new-game-player-list">
+                
+            </div>
+        </div>
 
-        <a href="#" class="btn btn-secondary"  id="add-new-player">New Player</a>
-    </div>
-</div>
+        <div class="row-fluid" id="available-players">
+            <div class="span12">
+                <% _.each(allPlayers, function(player, index){ %>
+                    <div class="row-fluid">
+                        <div class="span12 player <%- _.contains(_.pluck(game.players, 'id'), player.id) ? 'selected' : '' %>" data-player-id="<%-player.id %>">
+                            <%-player.name %>
+                        </div>
+                    </div>
+                <%  }); %>
+            </div>
+        </div>
 
-<div class="row-fluid">
-    <div class="span12">
-        <a href="#" class="btn btn-primary"  id="create-game">Start Game</a>
+        <div class="row-fluid">
+            <div class="span12">
+
+                <a href="#" class="btn btn-secondary"  id="add-new-player">New Player</a>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                <a href="#" class="btn btn-primary"  id="create-game">Start Game</a>
+            </div>
+        </div>
     </div>
 </div>

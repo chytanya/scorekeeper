@@ -1,11 +1,20 @@
+@font-face {  
+  font-family: manteka ;  
+  src: url( 'fonts/manteka/manteka.ttf' ) format("truetype");  
+} 
+
 body {
-    background: #fafafa;
+    background: #18A6A1;
+    color:white;
+    font-family: manteka , verdana, helvetica, sans-serif;
 }
 
 .hero-unit {
     margin: 50px auto 0 auto;
     width: 300px;
 }
+
+/* -------------- GAME LISTING PAGE --------------- */
 
 #game-list{
     height:600px;    
@@ -26,10 +35,84 @@ body {
     cursor: pointer;
 }
 
-#game-list{
-    
+li.game{
+    list-style:none;
+    background: white;
+    color: #1C546A;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-li.game{
-    list-style:none;  
+li.game .name{
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+li.game .winner{
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+li.game .players .player .name{
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+/* ---------- END : GAME LISTING PAGE ------------ */
+
+
+/* ---------- NEW GAME FORM ------------ */
+
+#new-game-form .player.selected {
+    color: red;
+}
+
+/* ---------- END NEW GAME FORM ------------ */
+
+
+/* ---------- GAME DETAILS PAGE ------------ */
+
+
+#game-details #game{
+
+}
+
+#game #title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    height: 20px;
+    background-color: salmon;
+}
+
+#game .player {
+    float: left;
+    text-align: center;
+}
+
+#game .player .name{
+    width: 100%;
+    text-align: center;
+}
+
+#game .add_score {
+    cursor: pointer;
+}
+
+#game .score_input_wrapper{
+    display: none;
+}
+
+
+/* ------- END : GAME DETAILS PAGE --------- */
+
+
+#new-player-form{
+    border-radius: 0px;
 }

@@ -1,10 +1,8 @@
 define(['backbone', 
         'text!../../templates/game_item.html',
-        'text!../../templates/game_item_details.html'
        ], function (
            Backbone,
-           GameItemTemplateHTML,
-           GameDetailsTemplateHTML
+           GameItemTemplateHTML
        ) {
     
     'use strict';
@@ -18,8 +16,6 @@ define(['backbone',
 		// Cache the template function for a single item.
 		template: _.template(GameItemTemplateHTML),
         
-        detailsTemplate: _.template(GameDetailsTemplateHTML),
-
 		// The DOM events specific to an item.
 		events: {
 			'click .toggle': 'toggleCompleted',
@@ -44,11 +40,6 @@ define(['backbone',
             this.$el.attr('data-game-id', this.model.get('id'));
 			return this;
 		},
-        
-        renderDetails: function(){
-            this.$el.html(this.detailsTemplate(this.model.toJSON()));
-            return this;
-        },
 
 		toggleVisible: function () {
 			this.$el.toggleClass('hidden', this.isHidden());

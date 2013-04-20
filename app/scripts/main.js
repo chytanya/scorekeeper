@@ -28,18 +28,16 @@ require.config({
     }
 });
 
-require(['jquery', 'moment', 'app'], function ($, moment, AppView) {
+require(['jquery', 'moment', 'app'], function ($, moment, appView) {
     
     'use strict';
 
-    var appView = new AppView();
-    
-    $('#show-add-new-game').on('click', function(e){
-        appView.showAddNewGame(); 
-    });
-    
-    $('.brand').on('click', function(e){
-        appView.initialize(); 
+    $('#new-player-add-btn').live('click', function(e){
+        var modal = $(e.target).parents('#new-player-form');
+        var playerName = $(modal).find('#new-player-name-input').val();
+        appView.addNewPlayer(playerName);
+        $(modal).modal('hide');
+        appView.showAddNewGame();
     });
 
 });
