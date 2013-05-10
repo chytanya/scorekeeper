@@ -1,0 +1,524 @@
+@font-face {  
+  font-family: manteka ;  
+  src: url( 'fonts/manteka/manteka.ttf' ) format("truetype");  
+}
+
+@font-face {  
+  font-family: advent ;  
+  src: url( 'fonts/advent/advent_bold.ttf' ) format("truetype");  
+}
+
+@font-face {  
+  font-family: arvil ;  
+  src: url( 'fonts/arvil/Arvil_Sans.ttf' ) format("truetype");  
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+    background: #18A6A1;
+    color:white;
+    font-family: arvil, verdana, helvetica, sans-serif;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+}
+
+#app{
+  height: 500px;
+  overflow-y : scroll;
+}
+/* -------------- LEFT NAV --------------- */
+
+#left-nav{
+
+}
+
+#left-nav li a{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+
+#left-nav .nav-item{
+  color: white;
+  font-weight: 500;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+#left-nav .nav-item#current-games{
+  background-color: #49D1BB;
+}
+
+#left-nav .nav-item#show-add-new-game{
+  background-color: #FB444F;
+  background-image: url('../img/start_game.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-size: 18px;
+}
+
+#left-nav .nav-item#all-games{
+  background-color: #6F395F;
+}
+
+#left-nav .nav-item#players{
+  background-color: #6F395F;
+}
+
+#left-nav .nav-item#settings{
+  background-color: #6F395F;
+}
+
+/* --------------END LEFT NAV --------------- */
+
+
+/* -------------- GAME LISTING PAGE --------------- */
+
+#game-list{
+    height:600px;    
+}
+
+#no-games {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    font-size: 18px;
+    color: #FFF;
+    border: 3px dotted #FFF;
+    padding: 35px 25px;
+    border-radius: 5px;
+    font-weight: 500px;
+    cursor: pointer;
+}
+
+.game{
+    list-style:none;
+    background: white;
+    color: #1C546A;
+    padding-bottom: 7px;
+    position: relative;
+    padding-top: 7px;
+    border-bottom: 1px solid #BFC7D8;
+}
+
+.game .section1{
+  width: 25%;
+  float: left;
+  min-height: 100px;
+}
+
+.game .section1 .moment{
+  text-align: center;
+}
+
+.game .section1 .moment .month{
+  font-size: 24px;
+  text-transform: uppercase;
+  height: 24px;
+}
+
+.game .section1 .moment .day{
+  font-size: 42px;
+  margin-top: 10px;
+  height: 42px;
+  line-height: 42px;
+}
+
+.game .section1 .moment .year{
+  
+}
+
+.game .section2{
+  width: 75%;
+  float: left;
+}
+
+.game .name{
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.game .winner{
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.game .players .player .name{
+    font-size: 18px;
+    margin: 5px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.game .delete{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* ---------- END : GAME LISTING PAGE ------------ */
+
+
+/* ---------- NEW GAME FORM ------------ */
+
+#new-game-form{
+
+}
+
+#new-game-form #new-game-name{
+    width: 96%;
+    border-radius: 0px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    padding: 5px;
+} 
+
+#new-game-form .player{
+    background: white;
+    color: #1C546A;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+#new-game-form .player.selected {
+    background: #1C546A;
+    color: white;
+}
+
+#new-game-form #add-new-player{
+    float: right;;
+}
+
+#new-player-form{
+    border-radius: 0px;
+}
+
+#new-player-form .modal-header{
+    color: #1C546A;
+}
+
+/* ---------- END NEW GAME FORM ------------ */
+
+
+/* ---------- GAME DETAILS PAGE ------------ */
+
+#game-details{
+    background-color: white;
+    color: #1C546A;
+    padding-bottom: 10px;
+}
+
+#game-details #game{
+
+}
+
+#game #title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    height: 40px;
+    background-color: #1C546A;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#game .player {
+  float: left;
+  text-align: center;
+  font-size: 25px;
+}
+
+#game .player .name{
+    text-align: left;
+    padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 60%;
+    float: left;
+    line-height: 50px;
+}
+
+#game .player .score{
+    width: 20%;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    letter-spacing: 2px;
+}
+
+#game .player .update{
+    height: 50px;
+    line-height: 50px;
+}
+
+
+#game .add_score {
+    cursor: pointer;
+}
+
+#game .score_change_wrapper{
+    height: 50px;
+    display: none;
+}
+
+#game .score_change_wrapper .score_input_wrapper{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+#game .score_change_wrapper .score_input_wrapper input{
+    border: none !important;
+    height: 30px;
+    width: 30px;
+    border-bottom: 1px solid red;
+}
+
+#game .score_change_wrapper .score_input_wrapper input:focus{
+    outline: none;
+}
+
+#game .score_change_wrapper .add{
+    float: left;
+    width: 25%;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+#game .score_change_wrapper .subtract{
+    float: left;
+    width: 25%;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+
+/* ------- END : GAME DETAILS PAGE --------- */
+
+
+/*** ---- SNAP ---- *****/
+
+/* Show "Left" drawer for the "Right" drawer in the demo */
+.snapjs-right .snap-drawer-left {
+    display: block;
+    right: 0;
+    left: auto;
+}
+
+/* Hide the actual "Right" drawer in the demo */
+.snapjs-right .snap-drawer-right {
+    display: none;
+}
+
+/* Show the "Drag" background in the demo */
+#content {
+}
+
+/* Demo toolbar styles */
+#toolbar {
+  background: #536ea7;
+  border-bottom: 1px solid #111b32;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  height: 44px;
+}
+
+#toolbar h1 {
+  color: #fff;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 44px;
+  left: 44px;
+  width: auto;
+  height: 44px;
+}
+
+#nav-opener{
+  position: absolute;
+  left: 0;
+  top: 0;
+  float: left;
+  text-align: center;
+}
+
+#open-left {
+  background: url(../img/open.png) center center no-repeat;
+  display: block;
+  height: 44px;
+  width: 44px;
+}
+
+#page-title-wrapper {
+    text-align: center;
+    font-size: 34px;
+    padding-top: 10px;
+    width: 100%;
+    float: right;
+    height: 34px;
+    letter-spacing: 2px;
+}
+
+/* Show the red "No Drag" box in the demo */
+#no-drag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 100px;
+    margin-left: -25%;
+    margin-top: -50px;
+    background: red;
+    color: #FFF;
+    text-align: center;
+    line-height: 100px;
+}
+
+/* Styles for the social buttons in the demo */
+.demo-social {
+    padding: 0 15px;
+}
+
+/* Show the translucent white "Toggle" boxes in the demo */
+.toggler {
+    width: 80%;
+    background: rgba(255,255,255,0.5);
+    margin: 0 auto;
+    position: relative;
+    top: 70px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Styles for expanding "Search" input in the "Expanding" demo */
+.search {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+       -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#search {
+    height: 30px;
+    width: 87%;
+    margin: 7px 7px 0 7px;
+    background: linear-gradient(#414A5A,#4C5464);
+    background: -webkit-linear-gradient(#414A5A,#4C5464);
+    padding-left: 15px;
+    border: 1px solid #222936;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 25px;
+    -webkit-box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
+       -moz-box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
+            box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.4);
+}
+
+#search:focus {
+    outline: none;
+    border-color: #151515;
+}
+
+/* Styles for fading out the drawer content in the "Expanding" demo */
+.drawer-inner {
+    -webkit-transition: opacity 0.3s ease; 
+       -moz-transition: opacity 0.3s ease; 
+        -ms-transition: opacity 0.3s ease; 
+         -o-transition: opacity 0.3s ease; 
+            transition: opacity 0.3s ease; 
+}
+
+.snapjs-expand-left .drawer-inner,
+.snapjs-expand-right .drawer-inner {
+    opacity: 0;
+}
+
+/* Styles for the "Settings" demo */
+.opt {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.opt p {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #222;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Default demo styles */
+.snap-content {
+  background: #BFC7D8;
+}
+
+.snap-drawers {
+  background: #323949;
+}
+
+.snap-drawer {
+    background: #323949;
+    color: #eee;
+    width: 180px;
+}
+
+.snap-drawer h3 {
+  font-size: 60px;
+  font-weight: normal;
+  margin: 25px 15px;
+}
+
+.snap-drawer h4 {
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+}
+
+.snap-drawer ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.snap-drawer li > a {
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 0px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #000;
+  text-decoration: none;
+  color: #ccc;
+  text-indent: 20px;
+}
+
+.snap-drawer p {
+  opacity: 0.5;
+  padding: 15px;
+  font-size: 12px;
+}

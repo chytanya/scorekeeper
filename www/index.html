@@ -1,0 +1,81 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="user-scalable=no,width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link href="styles/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+          body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+          .sidebar-nav {
+            padding: 9px 0;
+          }
+    
+          @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+              float: none;
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+          }
+        </style>
+        <link rel="stylesheet" href="styles/snap.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- build:js scripts/vendor/modernizr.js -->
+            <!--<script src="components/modernizr/modernizr.js"></script>-->
+        <!-- endbuild -->
+        
+    </head>
+    <body>
+
+        <div class="snap-drawers">
+            <div class="snap-drawer snap-drawer-left">
+                <div>
+                    <h3>Skorer</h3>
+                    <ul id="left-nav">
+                        <li><a href="#" class="nav-item" id="current-games">Current Games</a></li>
+                        <li><a href="#" class="nav-item" id="show-add-new-game">New Game</a></li>
+                        <li><a href="#" class="nav-item" id="all-games">All Games</a></li>
+                        <li><a href="#" class="nav-item" id="players">Players</a></li>
+                        <li><a href="#" class="nav-item" id="settings">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="snap-drawer snap-drawer-right"></div>
+        </div>
+        
+        <div id="content" class="snap-content">
+            <div id="toolbar">
+
+                <div class="row">
+                    <div id="nav-opener">
+                        <a href="#" id="open-left"></a>
+                    </div>
+                    <div id="page-title-wrapper">
+                        Home
+                    </div>
+                </div>
+
+                <div class="container" id="app">            
+                    <div class="row">
+                        <div class="span12" id="game-list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+        <script type="text/javascript" src="cordova-2.5.0.js"></script>
+
+        <!-- build:js scripts/main.js -->
+        <script data-main="scripts/main" src="components/requirejs/require.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

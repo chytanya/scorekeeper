@@ -1,0 +1,57 @@
+<div>
+    
+    <div class="row">
+        <div class="span2 section1">
+
+            <div class="moment">
+                <div class="day">
+                    <%-moment(created).format("DD") %>
+                </div>
+                <div class="month">
+                    <%-moment(created).format("MMM") %>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="span10 section2">
+
+            <div class="row name-wrapper">
+                <div class="span12 name">
+                    <%- name %>
+                </div>
+            </div>
+                
+            <% if(winner){ %>
+            
+                <div class="row winner-wrapper">
+                    <div class="span12 winner">
+                        Game Winner : <%- winner %>
+                    </div>
+                </div>
+
+            <% } %>
+            
+            <div class="row players-wrapper">
+                <div class="span12 players">
+                    <% _.each(players, function(player){
+                        %>
+                            <div class="player">
+                                <i class="icon icon-user"></i><span class="name"><%-player.name %></span>
+                            </div>
+                        <%
+                    });
+                    %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <a class="close delete" href="#">&times;</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        
+</div>
