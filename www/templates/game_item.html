@@ -3,6 +3,8 @@
     <div class="row">
         <div class="span2 section1">
 
+            <div class="moment-header">
+            </div>
             <div class="moment">
                 <div class="day">
                     <%-moment(created).format("DD") %>
@@ -37,7 +39,10 @@
                     <% _.each(players, function(player){
                         %>
                             <div class="player">
-                                <i class="icon icon-user"></i><span class="name"><%-player.name %></span>
+                                <span class="name">
+                                    <i class="icon icon-user"></i>
+                                    <%-player.name %>
+                                </span>
                             </div>
                         <%
                     });

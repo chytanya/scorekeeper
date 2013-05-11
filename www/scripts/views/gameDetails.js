@@ -30,7 +30,7 @@ define(['backbone',
         },
 
         render: function(){
-            Players.reset();
+            Players.reset();            
             this.$el.html(this.template(this.model.toJSON()));
             $('#page-title').text(this.model.get('name'));
             Players.add(this.model.get('players'));
@@ -62,7 +62,6 @@ define(['backbone',
             scores.push(score);
 
             Player.set('scores', scores);
-
             this.updateModelData();
 
         },
@@ -74,11 +73,18 @@ define(['backbone',
             scores.push("-" + score);
 
             Player.set('scores', scores);
-
             this.updateModelData();
         },
 
         updateModelData: function(){
+
+            _.each(Players.models, function(Player){
+                var playerScores = Player.get('scores');
+                var totalPlayerScore = _.reduce(playerScores, function(memo, num){ return parseInt(memo) + parseInt(num); },0);
+                Player.set('total_score', totalPlayerScore);
+            });
+
+
             this.model.set('players', Players.toJSON());
             this.model.save();
         }

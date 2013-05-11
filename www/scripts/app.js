@@ -129,7 +129,6 @@ define([
         },
 
         addPlayerToNewGame: function(e){
-
             var player  =   $(e.target).closest('.player');
             $(player).toggleClass('selected')
         },
@@ -140,6 +139,7 @@ define([
             }
             $('#new-player-form').modal();
             $('#new-player-form').modal('show');
+            $('#new-player-form #new-player-name-input').val('');
         },
 
         addNewPlayer: function(playerName){
