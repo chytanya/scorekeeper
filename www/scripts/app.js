@@ -109,7 +109,9 @@ define([
             $('#app').html(this.createNewGameTemplate({ 
                                             game                :   game, 
                                             allPlayers          :   allPlayers.toJSON()
-                                        })); 
+                                        }));
+            //$('#new-game-name').focus();
+            setTimeout(function(){ $('#new-game-name').focus(); }, 2000);
 
         },
 

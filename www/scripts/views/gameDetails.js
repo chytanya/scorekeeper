@@ -90,7 +90,14 @@ define(['backbone',
         },
 
         endCurrentGame: function(e){
+
+            // set the winner by high score
+            var winner = _.max(Players.models, function(player){ return player.get('total_score'); });
+            this.model.set('winner', winner);
+
+            // set the game as completed
             this.model.set('completed', moment().format('YYYY-MM-DD, HH:mm:ss'));
+
             this.model.save();
             $(e.target).closest('.end-game-wrapper').hide();
         }
