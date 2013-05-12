@@ -61,7 +61,7 @@ require(['jquery', 'moment', 'snap', 'app'], function ($, moment, Snap, appView)
     });
 
     $('#current-games').live('click', function(){
-        appView.addAllCurrentGames();
+        appView.showAllIncludingCompleted();
     });
 
     $('#all-games').live('click', function(){

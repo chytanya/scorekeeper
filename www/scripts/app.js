@@ -43,7 +43,7 @@ define([
             
             this.listenTo(games, 'add', this.addOne);
             this.listenTo(games, 'reset', this.addAll);
-            this.listenTo(games, 'all', this.render);
+            this.listenTo(games, 'all', this.addAll);
             
             games.fetch();
 
@@ -66,19 +66,33 @@ define([
         
         addOne: function (game) {
             var view = new GameView({ model: game });
+            if(game.get('completed')){ $(view.render().el).addClass('completed'); }
             $('#game-list').append(view.render().el);
         },
 
         // Add all items in the **games** collection at once.
-        addAll: function () {
+        addAll: function (showCompleted) {
+
+            if(typeof showCompleted === 'undefined'){
+                showCompleted = false;
+            }
+
+            var appGames;
+
+            if(showCompleted){
+                appGames  = games.current();
+            }else{
+                appGames  = games;
+            }
+
             $('#app').html('<div class="row"><div class="span12" id="game-list"></div></div>');
             this.$('#game-list').html('');
-            games.each(this.addOne, this);
+            appGames.each(this.addOne, this);
             $('#show-add-new-game').show();
         },
 
-        addAllCurrentGames: function(){
-            this.addAll();
+        showAllIncludingCompleted: function(){
+            this.addAll(true);
         },
         
         showAddNewGame: function(){

@@ -9,11 +9,13 @@ define(['backbone', 'models/game', 'backbone.localStorage'], function (Backbone,
         // Save all of the games items under the `"scorekeeper"` namespace.
         localStorage: new LocalStorage('scorekeeper.games'),
 
-        // Filter down the list of all todo items that are finished.
-        completed: function () {
-            return this.filter(function (game) {
-                return game.get('completed');
+        // Filter down the list of all games that are not finished.
+        current: function () {
+            var filtered = this.filter(function (game) {
+                return !game.get('completed');
             });
+
+            return new GameList(filtered);
         },
 
         // We keep the Games in sequential order, despite being saved by unordered

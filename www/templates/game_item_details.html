@@ -1,6 +1,7 @@
 <div class="row" id="game">
     <div class="span12">
 
+        <% console.log('in the view', this.model, id, name, completed, 'test'); %>
         <div class="row" id="scoreboard">
             <%
                 var isHighest               =   false;
@@ -21,7 +22,9 @@
                         <div class="row">
                             <div class="span8 name"><%-player.name %></div>
                             <div class="span3 score"><%-player.total_score %></div>
-                            <div class="span1 update">+/-</div>
+                            <% if(!completed){ %>
+                                <div class="span1 update">+/-</div>
+                            <% } %>
                         </div>
                         <div class="row score_change_wrapper">
                             <div class="span3 add">+</div>
@@ -36,9 +39,11 @@
             %>
         </div>
 
-        <div class="end-game-wrapper">
-            <a href="#" class="btn btn-primary" id="end-game">End Game</a>
-        </div>
+        <% if(!completed){ %>
+            <div class="end-game-wrapper">
+                <a href="#" class="btn btn-primary" id="end-game">End Game</a>
+            </div>
+        <% } %>
 
     </div>
 </div>

@@ -204,6 +204,18 @@ input{
     font-size: 45px;
 }
 
+.game.completed .name{
+  color: silver !important;
+}
+
+.game.completed .section1 .moment-header{
+  background-color: #6F395F;
+}
+
+.game.completed .section1 .moment{
+  background-color: rgb(158, 95, 139);
+}
+
 /* ---------- END : GAME LISTING PAGE ------------ */
 
 
@@ -228,7 +240,18 @@ input{
     padding: 5px;
     margin-top: 15px;
     text-align: center;
-} 
+    background-color: transparent !important;
+    border-style: solid !important;
+    border-width: 0px 0px 1px 0px !important;
+    border-color: #37AAE4 !important;
+    outline: none;
+    -webkit-box-shadow: none;
+}
+
+#new-game-form #new-game-name:focus{
+  outline: none;
+  -webkit-box-shadow: none;
+}
 
 #new-game-form #available-players{
   text-align: center;
@@ -267,6 +290,21 @@ input{
 
 #new-player-form .modal-header{
     color: #1C546A;
+}
+
+#new-player-form #new-player-name-input{
+
+    text-align: center;
+    background-color: transparent !important;
+    border-style: solid !important;
+    border-width: 0px 0px 1px 0px !important;
+    /* border-color: #37AAE4 !important; */
+    border-color: transparent !important;
+    outline: none;
+    -webkit-box-shadow: none;
+    font-size: 24px;
+    width: 100%;
+    border-radius: 0px;
 }
 
 #create-game {
