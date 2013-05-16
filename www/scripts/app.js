@@ -7,6 +7,7 @@ define([
         'text!../templates/no_games.html',
         'text!../templates/create_new_game.html',
         'text!../templates/new_player.html',
+        'text!../templates/players.html'
     ], function (
             Bootstrap,
             Backbone,
@@ -14,7 +15,8 @@ define([
             GameView, GameDetailView,
             noGamesTemplateHTML,
             createNewGameTemplateHTML,
-            newPlayerTemplateHTML
+            newPlayerTemplateHTML,
+            playersTemplate
         ){
 
     'use strict';
@@ -28,13 +30,18 @@ define([
         createNewGameTemplate : _.template(createNewGameTemplateHTML),
 
         newPlayerTemplate : _.template(newPlayerTemplateHTML),
+
+        playersTemplate : _.template(playersTemplate),
         
         events: {
             'click #no-games'       :   'showAddNewGame',
             'click #create-game'    :   'createNewGame',
             'click .game'           :   'showGame',
             'click #add-new-player' :   'showAddNewPlayer',
-            'click #available-players .player'     :   'addPlayerToNewGame'
+            'click #available-players .player'     :   'addPlayerToNewGame',
+
+            //manage players page
+            'click #players .player .delete'    :   'deletePlayer'
         },
         
         initialize : function(){
@@ -42,28 +49,20 @@ define([
             //this.$main = this.$('#main');
             
             this.listenTo(games, 'add', this.addOne);
+            this.listenTo(games, 'all', this.render);
             this.listenTo(games, 'reset', this.addAll);
-            this.listenTo(games, 'all', this.addAll);
-            
-            games.fetch();
 
+            games.fetch();
         },
         
         render: function(){
-                        
-            /*
-                _.invoke(games.models, 'destroy');
-                this.deleteAppData();
-            */
 
-            if(games.length) {
-                console.log(games);
-            } else {
+            if(!games.length) {
                 $('#game-list').html(this.noGamesTemplate({}));
             }
             
         },
-        
+
         addOne: function (game) {
             var view = new GameView({ model: game });
             if(game.get('completed')){ $(view.render().el).addClass('completed'); }
@@ -71,28 +70,22 @@ define([
         },
 
         // Add all items in the **games** collection at once.
-        addAll: function (showCompleted) {
+        addAll: function () {
 
-            if(typeof showCompleted === 'undefined'){
-                showCompleted = false;
-            }
-
-            var appGames;
-
-            if(showCompleted){
-                appGames  = games.current();
-            }else{
-                appGames  = games;
-            }
-
+            //games.current();
             $('#app').html('<div class="row"><div class="span12" id="game-list"></div></div>');
-            this.$('#game-list').html('');
-            appGames.each(this.addOne, this);
-            $('#show-add-new-game').show();
+            $('#game-list').html('');
+            games.each(this.addOne);
         },
 
         showAllIncludingCompleted: function(){
-            this.addAll(true);
+            games.fetch();
+            this.addAll();
+        },
+
+        showAll: function(){
+            games = games.current();
+            this.addAll();
         },
         
         showAddNewGame: function(){
@@ -110,13 +103,21 @@ define([
                                             game                :   game, 
                                             allPlayers          :   allPlayers.toJSON()
                                         }));
-            //$('#new-game-name').focus();
-            setTimeout(function(){ $('#new-game-name').focus(); }, 2000);
+            $('#new-game-name').focus();
 
         },
 
         managePlayers: function(){
-            alert('manage players');
+            allPlayers.fetch();
+            $('#app').html(this.playersTemplate({ players : allPlayers.toJSON() }));
+        },
+
+        deletePlayer: function(e){
+            var playerDom  = $(e.target).closest('.player');
+            var playerId = $(playerDom).attr('data-player-id');
+            allPlayers.get(playerId).destroy();
+            allPlayers.reset();
+            $(playerDom).remove();
         },
         
         createNewGame: function(){

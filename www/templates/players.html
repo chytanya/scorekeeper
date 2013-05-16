@@ -1,0 +1,19 @@
+<div class="row" id="players-wrapper">
+    <div class="span12" id="players">
+        
+        <% _.each(players, function(player){ %>
+        <% console.log('in view', player); %>
+
+            <div class="player" data-player-id="<%-player.id %>">
+                <div class="name">
+                    <%-player.name %>
+                </div>
+                <div class="delete">
+                    &times;
+                </div>
+            </div>
+
+        <% }); %>
+
+    </div>
+</div>

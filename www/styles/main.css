@@ -110,11 +110,12 @@ input{
     margin-left: -100px;
     font-size: 18px;
     color: #FFF;
-    border: 3px dotted #FFF;
+    border: 3px dotted #333;
     padding: 35px 25px;
     border-radius: 5px;
     font-weight: 500px;
     cursor: pointer;
+    color: black;
 }
 
 .game{
@@ -208,6 +209,10 @@ input{
   color: silver !important;
 }
 
+.game.completed .winner{
+  color: silver !important;
+}
+
 .game.completed .section1 .moment-header{
   background-color: #6F395F;
 }
@@ -215,6 +220,8 @@ input{
 .game.completed .section1 .moment{
   background-color: rgb(158, 95, 139);
 }
+
+
 
 /* ---------- END : GAME LISTING PAGE ------------ */
 
@@ -245,6 +252,7 @@ input{
     border-color: #37AAE4 !important;
     outline: none;
     -webkit-box-shadow: none;
+    text-align: center;
 }
 
 #new-game-form #new-game-name:focus{
@@ -438,6 +446,32 @@ input{
 
 
 /* ------- END : GAME DETAILS PAGE --------- */
+
+/* ------- MANAGE PLAYERS PAGE --------- */
+
+#players {
+    color: black;
+}
+
+#players .player{
+    height: 30px;
+}
+
+#players .player .name{
+    font-size: 24px;
+    float: left;
+    width: 80%;
+    padding: 10px 20px;
+}
+
+#players .player .delete{
+    color: #999;
+    float: left;
+    width: 10%;
+    font-size: 40px;
+    line-height: 40px;
+}
+/* ------- END : MANAGE PLAYERS PAGE --------- */
 
 
 /*** ---- SNAP ---- *****/
