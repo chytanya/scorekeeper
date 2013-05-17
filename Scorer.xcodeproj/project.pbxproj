@@ -42,6 +42,9 @@
 		30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E5649113A7FCAF007403D8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		54304062173D5A1400496971 /* icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 54304061173D5A1400496971 /* icon-57x57.png */; };
 		54304064173D5A1700496971 /* icon-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 54304063173D5A1700496971 /* icon-114x114.png */; };
+		54EE46471746178000172F02 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 54EE46451746151900172F02 /* Default.png */; };
+		54EE464E17461C4400172F02 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54EE464D17461C4400172F02 /* Default@2x.png */; };
+		54EE465017461C4C00172F02 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54EE464F17461C4C00172F02 /* Default-568h@2x.png */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
@@ -105,6 +108,9 @@
 		32CA4F630368D1EE00C91783 /* Scorer-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Scorer-Prefix.pch"; sourceTree = "<group>"; };
 		54304061173D5A1400496971 /* icon-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-57x57.png"; sourceTree = "<group>"; };
 		54304063173D5A1700496971 /* icon-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-114x114.png"; sourceTree = "<group>"; };
+		54EE46451746151900172F02 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		54EE464D17461C4400172F02 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		54EE464F17461C4C00172F02 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Scorer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Scorer-Info.plist"; path = "../Scorer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
@@ -178,6 +184,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				54EE464F17461C4C00172F02 /* Default-568h@2x.png */,
+				54EE464D17461C4400172F02 /* Default@2x.png */,
+				54EE46451746151900172F02 /* Default.png */,
 				54304063173D5A1700496971 /* icon-114x114.png */,
 				54304061173D5A1400496971 /* icon-57x57.png */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
@@ -390,6 +399,9 @@
 				D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */,
 				54304062173D5A1400496971 /* icon-57x57.png in Resources */,
 				54304064173D5A1700496971 /* icon-114x114.png in Resources */,
+				54EE46471746178000172F02 /* Default.png in Resources */,
+				54EE464E17461C4400172F02 /* Default@2x.png in Resources */,
+				54EE465017461C4C00172F02 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
