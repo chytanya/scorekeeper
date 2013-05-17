@@ -39,7 +39,8 @@ define(['backbone',
         },
 
         showAddScore: function(e){
-            $(e.target).closest('.player').find('.score_change_wrapper').show();
+            $(e.target).addClass('active');
+            $(e.target).closest('.player').find('.score_change_wrapper').slideDown();
         },
 
         addScore: function(e){

@@ -403,6 +403,12 @@ input{
     margin-top: 20px;
 }
 
+#game .player .update.active{
+    width: 20%;
+    float: right;
+    background: skyblue;
+    box-shadow: 0px 0px 0px rgb(63, 130, 156);
+}
 
 #game .add_score {
     cursor: pointer;
@@ -410,10 +416,13 @@ input{
 
 #game .score_change_wrapper{
     display: none;
-    line-height: 40px;
-    height: 60px;
-    margin-top: 20px;
-    background: red;
+    line-height: 50px;
+    height: 70px;
+    background: skyblue;
+    box-shadow: 3px 1px 5px rgb(63, 130, 156);
+    color: white;
+    font-size: 50px;
+    padding-top: 10px;
 }
 
 #game .player .locked .icon.icon-lock{
@@ -429,7 +438,7 @@ input{
 
 #game .score_change_wrapper .score_input_wrapper input{
     width: 100%;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
@@ -440,13 +449,19 @@ input{
     border-radius: 0px;
     line-height: 40px;
     font-family: arvil, verdana, helvetica;
-    font-size: 30px;
     height: 40px;
+    color: white;
+}
+
+#game .score_change_wrapper .score_input_wrapper input::-webkit-input-placeholder{
+    color: #EEE;
+    font-size: 40px;
 }
 
 #game .score_change_wrapper .score_input_wrapper input:focus{
     outline: none;
     -webkit-box-shadow: none;
+    opacity: 0.8;
 }
 
 #game .score_change_wrapper .add{
@@ -454,16 +469,28 @@ input{
     width: 20%;
     font-size: 30px;
     cursor: pointer;
-    line-height: 40px;
-    font-size: 30px;
+    line-height: 50px;
+    font-size: 70px;
+
+    border: 1px solid white;
+    height: 50px;
+    width: 50px !important;
+    border-radius: 50px;
+    margin-right: 25px;
+    margin-left: 25px;
 }
 
 #game .score_change_wrapper .subtract{
     float: right;
     width: 20%;
-    line-height: 40px;
-    font-size: 30px;
+    line-height: 55px;
+    font-size: 70px;
     cursor: pointer;
+
+    border: 1px solid white;
+    height: 50px;
+    width: 50px !important;
+    border-radius: 50px;
 }
 
 #game .end-game-wrapper{
