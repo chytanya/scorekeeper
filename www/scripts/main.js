@@ -5,6 +5,7 @@ require.config({
         moment : '../components/moment/moment',
         underscore : '../components/underscore/underscore',
         backbone : '../components/backbone/backbone',
+        fastClick : '../components/fastclick/lib/fastclick',
         'backbone.localStorage' : 'vendor/backbone.localStorage',
         text : '../components/text/text',
         snap : 'vendor/snap'
@@ -22,6 +23,10 @@ require.config({
             deps : ['jquery'],
             exports : '_'
         },
+        fastClick: {
+            deps : ['jquery'],
+            exports : 'FastClick'
+        },
         localStorage: {
             deps : ['underscore', 'backbone'],
             exports : 'Backbone'
@@ -29,9 +34,13 @@ require.config({
     }
 });
 
-require(['jquery', 'moment', 'snap', 'app'], function ($, moment, Snap, appView) {
+require(['jquery', 'moment', 'snap', 'fastClick', 'app'], function ($, moment, Snap, FastClick, appView) {
     
     'use strict';
+
+    $(function() {
+        FastClick.attach(document.body);
+    });
 
     $('#new-player-add-btn').live('click', function(e){
         var modal = $(e.target).parents('#new-player-form');
