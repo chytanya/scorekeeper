@@ -58,6 +58,9 @@ define(['backbone',
         },
 
         addScoreToPlayer: function(playerId, score){
+
+            if(!score || isNaN(parseInt(score))) score = 0;
+
             var Player = Players.get(playerId);
 
             var scores = Player.get('scores');
