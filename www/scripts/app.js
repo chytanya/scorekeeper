@@ -103,7 +103,8 @@ define([
                                             game                :   game, 
                                             allPlayers          :   allPlayers.toJSON()
                                         }));
-            $('#new-game-name').focus();
+            //$('#new-game-name').focus();
+            $('.close.view-close').attr('id', 'close-new-game-creation').show();
 
         },
 
@@ -143,6 +144,7 @@ define([
             }else{
                 alert('no such game!');   
             }
+            $('.close.view-close').attr('id', 'close-current-game').show();
         },
 
         addPlayerToNewGame: function(e){

@@ -84,6 +84,10 @@ require(['jquery', 'moment', 'snap', 'app'], function ($, moment, Snap, appView)
         snapper.close();
     });
 
+    $('.close.view-close').live('click', function(){
+        appView.showAll();
+        $('.close.view-close').removeAttr('id').hide();
+    });
 
 });
 

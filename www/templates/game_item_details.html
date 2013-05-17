@@ -24,6 +24,8 @@
                             <div class="span3 score"><%-player.total_score %></div>
                             <% if(!completed){ %>
                                 <div class="span1 update">+/-</div>
+                            <% }else{ %>
+                                <div class="span1 locked"><i class="icon icon-lock"></i></div>
                             <% } %>
                         </div>
                         <div class="row score_change_wrapper">

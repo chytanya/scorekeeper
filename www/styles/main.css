@@ -33,6 +33,23 @@ body {
   overflow-y : scroll;
 }
 
+.view-close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 60px;
+  color: white;
+  font-weight: 100;
+  text-shadow: none;
+  opacity: 0.7;
+  display: none;
+}
+
+.view-close:hover{
+  color: white;
+  text-decoration: none;
+}
+
 /* -------------- BOOTSTRAP OVERRIDES --------------- */
 
 .btn{
@@ -253,6 +270,7 @@ input{
     outline: none;
     -webkit-box-shadow: none;
     text-align: center;
+    font-family: arvil, verdana, helvetica;
 }
 
 #new-game-form #new-game-name:focus{
@@ -349,7 +367,7 @@ input{
 #game .player {
   float: left;
   text-align: center;
-  font-size: 25px;
+  font-size: 40px;
 }
 
 #game .player .name{
@@ -360,8 +378,10 @@ input{
     text-overflow: ellipsis;
     width: 60%;
     float: left;
-    line-height: 50px;
-}
+    line-height: 40px;
+    height: 40px;
+    margin-top: 20px;
+} 
 
 #game .player.highest .name{
     color: limegreen;
@@ -370,14 +390,17 @@ input{
 #game .player .score{
     width: 20%;
     float: left;
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
     letter-spacing: 2px;
+    line-height: 40px;
+    height: 40px;
+    margin-top: 20px;
 }
 
 #game .player .update{
     height: 50px;
-    line-height: 50px;
+    line-height: 40px;
+    margin-top: 20px;
 }
 
 
@@ -386,8 +409,16 @@ input{
 }
 
 #game .score_change_wrapper{
-    height: 50px;
     display: none;
+    line-height: 40px;
+    height: 60px;
+    margin-top: 20px;
+    background: red;
+}
+
+#game .player .locked .icon.icon-lock{
+  margin-top: 40px;
+  opacity: 0.4;
 }
 
 #game .score_change_wrapper .score_input_wrapper{
@@ -397,7 +428,6 @@ input{
 }
 
 #game .score_change_wrapper .score_input_wrapper input{
-    height: 30px;
     width: 100%;
     font-size: 24px;
     font-weight: bold;
@@ -408,6 +438,10 @@ input{
     border-width: 0px 0px 1px 0px; 
     border-color: silver;
     border-radius: 0px;
+    line-height: 40px;
+    font-family: arvil, verdana, helvetica;
+    font-size: 30px;
+    height: 40px;
 }
 
 #game .score_change_wrapper .score_input_wrapper input:focus{
@@ -419,29 +453,35 @@ input{
     float: right;
     width: 20%;
     font-size: 30px;
-    line-height: 30px;
     cursor: pointer;
+    line-height: 40px;
+    font-size: 30px;
 }
 
 #game .score_change_wrapper .subtract{
     float: right;
     width: 20%;
+    line-height: 40px;
     font-size: 30px;
-    line-height: 30px;
     cursor: pointer;
 }
 
+#game .end-game-wrapper{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
 #game #end-game{
-    padding: 9px 18px 7px 18px;
     font-weight: bold;
     border: 1px solid #37AAE4;
     background: #37AAE4; /*#fc4940;*/
     box-shadow: none;
-    outline: 0;
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
     display: block;
-    margin-top: 30px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 28px;
 }
 
 
