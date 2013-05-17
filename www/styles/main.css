@@ -260,9 +260,9 @@ input{
     border-radius: 0px;
     height: 35px;
     line-height: 35px;
-    font-size: 20px;
+    font-size: 40px;
     padding: 5px;
-    margin-top: 15px;
+    margin-top: 40px;
     background-color: transparent !important;
     border-style: solid !important;
     border-width: 0px 0px 1px 0px !important;
@@ -293,6 +293,13 @@ input{
     margin: 5px auto;
 }
 
+#new-game-form #select-player-msg{
+    padding-top: 20px;
+    font-size: 20px;
+    color: salmon;
+    display: none;
+}
+
 #new-game-form #available-players .player.selected {
     background: #FB444F;
     color: white;
@@ -317,6 +324,11 @@ input{
     color: #1C546A;
 }
 
+#new-player-form .btn.close{
+    opacity: 1;
+    float: left;
+}
+
 #new-player-form #new-player-name-input{
 
     text-align: center;
@@ -327,9 +339,12 @@ input{
     border-color: transparent !important;
     outline: none;
     -webkit-box-shadow: none;
-    font-size: 24px;
+    font-size: 40px;
     width: 100%;
     border-radius: 0px;
+    font-family: arvil, verdana, helvetica;
+    height: 40px;
+    margin-top: 10px;
 }
 
 #create-game {

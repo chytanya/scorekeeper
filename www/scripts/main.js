@@ -45,6 +45,10 @@ require(['jquery', 'moment', 'snap', 'fastClick', 'app'], function ($, moment, S
     $('#new-player-add-btn').live('click', function(e){
         var modal = $(e.target).parents('#new-player-form');
         var playerName = $(modal).find('#new-player-name-input').val();
+        if(!playerName) {
+            $(e.target).addClass('validation_error');
+            return false;
+        }
         appView.addNewPlayer(playerName);
         $(modal).modal('hide');
         appView.showAddNewGame();

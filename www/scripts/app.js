@@ -76,6 +76,8 @@ define([
             $('#app').html('<div class="row"><div class="span12" id="game-list"></div></div>');
             $('#game-list').html('');
             games.each(this.addOne);
+
+            $('#page-title-wrapper').text('HOME');
         },
 
         showAllIncludingCompleted: function(){
@@ -106,11 +108,13 @@ define([
             //$('#new-game-name').focus();
             $('.close.view-close').attr('id', 'close-new-game-creation').show();
 
+            $('#page-title-wrapper').text('NEW GAME');
         },
 
         managePlayers: function(){
             allPlayers.fetch();
             $('#app').html(this.playersTemplate({ players : allPlayers.toJSON() }));
+            $('#page-title-wrapper').text('PLAYERS');
         },
 
         deletePlayer: function(e){
@@ -123,7 +127,18 @@ define([
         
         createNewGame: function(){
             var name = $('#new-game-name').val().trim();
+
+            // give a default name
+            if(!name){ 
+                name = 'Untitled Game';
+            }
+
             var players = [];
+
+            if($('.player.selected').length == 0){
+                $('#select-player-msg').show();
+                return false;
+            }
 
             $.each($('.player.selected'), function() {
                 var playerId =  $(this).attr('data-player-id');
@@ -144,6 +159,7 @@ define([
             }else{
                 alert('no such game!');   
             }
+            $('#page-title-wrapper').text(game.get('name'));
             $('.close.view-close').attr('id', 'close-current-game').show();
         },
 
@@ -179,7 +195,7 @@ define([
         },
 
         showSettings: function(){
-            alert('settings');
+            $('#page-title-wrapper').text('SETTINGS');
         }
         
     });
