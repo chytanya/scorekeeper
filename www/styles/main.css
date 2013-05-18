@@ -108,6 +108,7 @@ input{
 
 #left-nav .nav-item#settings{
   background-color: #24272C;
+  display: none;
 }
 
 /* --------------END LEFT NAV --------------- */
@@ -546,16 +547,16 @@ input{
 #players .player .name{
     font-size: 24px;
     float: left;
-    width: 80%;
-    padding: 10px 20px;
+    width: 70%;
+    padding: 20px 0px 20px 10px;
 }
 
 #players .player .delete{
     color: #999;
-    float: left;
-    width: 10%;
-    font-size: 40px;
-    line-height: 40px;
+    float: right;
+    width: 20%;
+    font-size: 60px;
+    line-height: 60px;
 }
 /* ------- END : MANAGE PLAYERS PAGE --------- */
 

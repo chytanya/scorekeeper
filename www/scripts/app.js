@@ -90,10 +90,11 @@ define([
             this.addAll();
         },
         
-        showAddNewGame: function(){
-            
+        showAddNewGame: function(selectedPlayers){
+
+            if(typeof selectedPlayers === 'undefined') selectedPlayers = [];
+
             allPlayers.fetch();
-            var selectedPlayers = [];
 
             var newGameName = $('#new-game-name').val();
             $('.player.selected').each(function(){
@@ -103,7 +104,8 @@ define([
             var game =  { name: newGameName, players : selectedPlayers, winner : null };
             $('#app').html(this.createNewGameTemplate({ 
                                             game                :   game, 
-                                            allPlayers          :   allPlayers.toJSON()
+                                            allPlayers          :   allPlayers.toJSON(),
+                                            selectedPlayers     :   selectedPlayers
                                         }));
             //$('#new-game-name').focus();
             $('.close.view-close').attr('id', 'close-new-game-creation').show();
@@ -179,6 +181,7 @@ define([
 
         addNewPlayer: function(playerName){
             var newPlayer = allPlayers.create({ name : playerName });
+            return newPlayer;
         },
 
         deleteAllPlayers: function(){

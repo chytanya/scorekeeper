@@ -40,7 +40,9 @@ define(['backbone',
 
         showAddScore: function(e){
             $(e.target).addClass('active');
-            $(e.target).closest('.player').find('.score_change_wrapper').slideDown();
+            var gamePlayer = $(e.target).closest('.player');
+            $(gamePlayer).find('.score_change_wrapper').slideDown('slow');
+            $(gamePlayer).find('.score_input').focus();
         },
 
         addScore: function(e){

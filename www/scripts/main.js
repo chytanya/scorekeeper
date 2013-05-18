@@ -49,9 +49,10 @@ require(['jquery', 'moment', 'snap', 'fastClick', 'app'], function ($, moment, S
             $(e.target).addClass('validation_error');
             return false;
         }
-        appView.addNewPlayer(playerName);
+        var selectedPlayers = [];
+        selectedPlayers.push(appView.addNewPlayer(playerName));
         $(modal).modal('hide');
-        appView.showAddNewGame();
+        appView.showAddNewGame(selectedPlayers);
     });
 
     var snapper = new Snap({
@@ -71,6 +72,11 @@ require(['jquery', 'moment', 'snap', 'fastClick', 'app'], function ($, moment, S
         } else {
             snapper.open('left');
         }
+    });
+
+    $('#main-logo').live('click', function(){
+        appView.showAll();
+        snapper.close();
     });
 
     $('#all-games').live('click', function(){
