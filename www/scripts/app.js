@@ -56,11 +56,9 @@ define([
         },
         
         render: function(){
-
             if(!games.length) {
                 $('#game-list').html(this.noGamesTemplate({}));
             }
-            
         },
 
         addOne: function (game) {
@@ -77,6 +75,10 @@ define([
             $('#game-list').html('');
             games.each(this.addOne);
 
+            if(!games.length) {
+                $('#game-list').html(this.noGamesTemplate({}));
+            }
+            
             $('#page-title-wrapper').text('HOME');
         },
 
