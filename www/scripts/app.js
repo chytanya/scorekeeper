@@ -90,7 +90,7 @@ define([
             this.addAll();
         },
         
-        showAddNewGame: function(selectedPlayers){
+        showAddNewGame: function(e, selectedPlayers){
 
             if(typeof selectedPlayers === 'undefined') selectedPlayers = [];
 

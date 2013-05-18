@@ -52,7 +52,7 @@ require(['jquery', 'moment', 'snap', 'fastClick', 'app'], function ($, moment, S
         var selectedPlayers = [];
         selectedPlayers.push(appView.addNewPlayer(playerName));
         $(modal).modal('hide');
-        appView.showAddNewGame(selectedPlayers);
+        appView.showAddNewGame(null, selectedPlayers);
     });
 
     var snapper = new Snap({
