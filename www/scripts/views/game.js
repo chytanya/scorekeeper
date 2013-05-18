@@ -65,7 +65,8 @@ define(['backbone',
 		},
 
 		// Remove the game, destroy the model from *localStorage* and delete its view.
-		clear: function () {
+		clear: function (e) {
+			$(e.target).closest('.game').addClass('animated hinge');
 			this.model.destroy();
 		}
     });

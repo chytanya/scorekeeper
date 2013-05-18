@@ -155,7 +155,7 @@ define([
             if(gameId){
                 var game = games.get(gameId);
                 var view = new GameDetailView({ model: game });
-                $('#app').html(view.render().el);
+                $('#app').removeClass('bounceInRight').html(view.render().el).addClass('bounceInRight');
             }else{
                 alert('no such game!');   
             }
