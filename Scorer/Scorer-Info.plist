@@ -18,13 +18,11 @@
 			<array>
 				<string>icon-57x57.png</string>
 				<string>icon-114x114.png</string>
-				<string>icon-72.png</string>
-				<string>icon-72@2x.png</string>
 			</array>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.chytanya.scorer</string>
+	<string>com.chytanya.skorer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
