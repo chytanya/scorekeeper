@@ -1,0 +1,71 @@
+body{
+    background: url('../img/bg.jpg') repeat;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#app{
+
+}
+
+#app-nav{
+    background: none;
+}
+
+#left-section{
+    text-align: center;
+}
+
+#iphone{
+    background: url('../img/iphone2.png') no-repeat;
+    height: 600px;
+    width: 100%;
+    background-position:  center center;
+}
+
+#right-section{
+    margin-left: 20px;
+}
+
+#right-section #logo{
+    background: url('../img/logo.png') no-repeat;
+    margin: 20px 0px 30px 0px;
+    font-weight: 600;
+    height: 90px;
+}
+
+#right-section .description-wrapper{
+    width: 80%;
+    margin-left: 20px;
+    margin-bottom: 35px;
+}
+
+#right-section .description-wrapper .description{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    font-family: 'Open Sans';
+    color: #555;
+}
+
+#right-section .screenshots-wrapper{
+    width: 80%;
+    margin-left: 20px;
+}
+
+#right-section .screenshots-wrapper .title{
+    font-family: 'Helvetica Nueue', 'Open Sans';
+    color: rgb(80, 118, 138);
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#right-section .thumbnails .thumbnail img{
+    width: 160px;
+    height: 240px;
+}
+
+#footer .twitter{
+    float: right;
+}
